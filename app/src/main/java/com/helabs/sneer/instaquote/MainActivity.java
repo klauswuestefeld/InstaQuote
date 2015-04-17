@@ -19,6 +19,10 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+//		Uncomment this lines to build the AQuoteADay app
+//		int day = (int)(System.currentTimeMillis() / 1000 / 60 / 60 / 24);
+//		startService(getIntent().<Intent>getParcelableExtra("SEND_MESSAGE").setAction(INSPIRATIONAL[day%INSPIRATIONAL.length]));
+
 		int randomQuote = new Random().nextInt(INSPIRATIONAL.length);
 		startService(getIntent().<Intent>getParcelableExtra("SEND_MESSAGE").setAction(INSPIRATIONAL[randomQuote]));
 		finish();
